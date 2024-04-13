@@ -8,7 +8,8 @@ if __name__ == '__main__':
     args = parser.parse_args()
     screen = Screen(args.height, args.width)
     screen.find_all_squares()
-    print(f'Found {screen.num_of_squares} squares.')
+    print(f'Found {screen.num_of_squares} squares on the screen of height {screen.height} and width {screen.width}.')
+    print('\nSquares:')
     print("{:<12} {:<12}".format('side length','# of squares'))
     for k, v in screen.squares.items():
         print("{:<12} {:<12}".format(k, v))
