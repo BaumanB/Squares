@@ -1,10 +1,16 @@
 class Screen:
+    def __new__(cls, height, width):
+        if (height < 1 or width < 1):
+            return None
+        return super().__new__(cls)
+
     def __init__(self, height, width):
         self.height = height
         self.width = width
         self.iteration_long_side = max(self.height, self.width)
         self.iteration_short_side = min(self.height, self.width)
         self.squares = {}
+        self.num_of_squares = 0
 
     def find_next_square(self):
         if self.iteration_long_side < self.iteration_short_side : self.iteration_long_side, self.iteration_short_side = self.iteration_short_side, self.iteration_long_side
@@ -24,3 +30,6 @@ class Screen:
         while self.find_next_square():
             pass
         self.num_of_squares = sum(self.squares.values())
+
+if __name__ == '__main__':
+    pass
