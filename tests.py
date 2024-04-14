@@ -31,6 +31,14 @@ class TestSquares(unittest.TestCase):
         self.assertEqual(screen2.height, 11, 'height should be left intact')
         self.assertEqual(screen2.width, 15, 'width should be left intact')
 
+    def test_initialization(self):
+        screen = Screen(0,1)
+        self.assertIsNone(screen, 'height initialization not ok')
+        screen = Screen(1,0)
+        self.assertIsNone(screen, 'width initialization not ok')
+        screen = Screen(1,1)
+        self.assertIsNotNone(screen, 'width initialization not ok')
+
 
 if __name__ == '__main__':
     unittest.main()
